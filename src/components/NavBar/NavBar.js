@@ -1,5 +1,6 @@
 import "./NavBar.scss";
 import logo from "../../images/logo-mcm.jpg"
+import CartWidget from "../CartWidget/CartWidget"
 
 const NavBar = () => {
     return (
@@ -9,7 +10,9 @@ const NavBar = () => {
                 <li><button className="navbar__btn">Home</button></li>
                 <li><button className="navbar__btn">Productos</button></li>
                 <li><button className="navbar__btn">Contacto</button></li>
+                <CartWidget />
             </ul>
+
         </nav>
     )
 }
