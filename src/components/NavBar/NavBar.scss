@@ -1,11 +1,13 @@
 .navbar{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: black;
     color: white;
-    padding: 20px;
+    height: 15vh;
+    padding-inline: 25px;
     .navbar__logo{
-        height: 8vh;
+        height: 80%;
     width: auto;
     }
     .navbar__menu{
