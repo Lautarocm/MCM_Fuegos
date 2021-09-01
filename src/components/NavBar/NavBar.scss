@@ -4,18 +4,15 @@
     align-items: center;
     background-color: black;
     color: white;
-    height: 15vh;
+    height: 20vh;
     padding-inline: 25px;
     .navbar__logo{
-        height: 80%;
-    width: auto;
+        height: 80px;
     }
     .navbar__menu{
         display: flex;
         list-style: none;
         justify-content: space-evenly;
-        align-items: center;
-        
-        
+        align-items: center; 
     }
 }
