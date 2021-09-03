@@ -1,5 +1,5 @@
 import "./NavBar.scss";
-import logo from "../../images/logo-mcm.jpg"
+import logo from "../../assets/images/logo.svg"
 import NavBarItem from "../NavBarItem/NavBarItem";
 import CartWidget from "../CartWidget/CartWidget"
 
