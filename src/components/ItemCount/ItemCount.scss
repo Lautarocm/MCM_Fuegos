@@ -9,11 +9,21 @@
         display: flex;
 
         & button{
-            border: 1px solid gray;
+            border: none;
+            color: rgb(126, 126, 126);
             border-radius: 50px;
             font-size: 1.25rem;
+            font-weight: bolder;
             width: 30px;
             height: 30px;
+            background-color: rgb(178, 212, 250);
+
+            &:hover{
+                background-color: white;
+                border: 1px solid rgb(178, 212, 250);
+                transform: scale(1.1);
+                transition: ease-in-out all 100ms;
+            }
         }
 
         & p{
