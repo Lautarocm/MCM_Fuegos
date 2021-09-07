@@ -13,9 +13,9 @@ const ItemCount = ({stock}) => {
         <div className="itemCount">
             <p>CANTIDAD</p>
             <div className="itemCount__buttons">
-                <button onClick={removeOne}>-</button>
+                <button disabled={count === minimum} onClick={removeOne}>-</button>
                 <p>{count}</p>
-                <button onClick={addOne}>+</button>
+                <button disabled={count === stock} onClick={addOne}>+</button>
             </div>
             {count <= minimum ? <p>Cuantas unidades quieres?</p> : <button className="addToCart-btn">Agregar al carrito</button>}
             <p className="stock">Stock: {stock}</p>

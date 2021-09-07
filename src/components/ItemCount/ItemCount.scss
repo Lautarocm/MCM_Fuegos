@@ -23,13 +23,18 @@
             height: 30px;
             background-color: rgb(117, 128, 143);
 
-            &:hover{
+            &:hover:enabled{
                 background-color: white;
                 border: 1px solid rgb(178, 212, 250);
                 transform: scale(1.05);
                 transition: ease-in-out all 200ms;
                 color: rgb(117, 128, 143);
                 box-shadow: 0px 0px 5px 0px rgb(0, 0, 0);
+            }
+
+            &:disabled{
+                background-color: rgb(197, 201, 206);
+                cursor: default;
             }
         }
 

@@ -6,7 +6,7 @@ const ItemListContainer = () => {
     return (
         <main>
             <h1>Aqui irá el catalogo de productos de MCM Fuegos</h1>
-            <ItemCount stock="6" />
+            <ItemCount stock={6} />
         </main>
     )
 }
