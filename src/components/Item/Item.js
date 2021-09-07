@@ -1,15 +1,23 @@
 import "./Item.scss"
+import ItemCount from "../ItemCount/ItemCount"
 
 const Item = ({itemData}) => {
 
     console.log(itemData.pictureUrl)
 
     return (
-        <div>
+        <div className="item">
             <img alt="#" src={itemData.pictureUrl}></img>
-            <p>{itemData.title}</p>
-            <p>${itemData.price}</p>
-            <p>id: {itemData.id}</p>
+            <div>
+                <div className="productInfo">
+                    <p className="title">{itemData.title}</p>
+                    <div className="containerPrice">
+                        <p className="description">{itemData.description}</p>
+                        <p className="price">${itemData.price}</p>
+                    </div>
+                    <ItemCount stock={itemData.stock} />
+                </div>
+            </div>
         </div>
     );
 }
