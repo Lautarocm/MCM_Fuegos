@@ -1,6 +1,7 @@
 import "./Item.scss"
 import ItemCount from "../ItemCount/ItemCount"
 
+
 const Item = ({itemData}) => {
 
     console.log(itemData.pictureUrl)

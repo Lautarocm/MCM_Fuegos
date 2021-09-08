@@ -11,7 +11,6 @@ const ItemCount = ({stock}) => {
 
     return (
         <div className="itemCount">
-            <p>CANTIDAD</p>
             <div className="itemCount__buttons">
                 <button disabled={count === minimum} onClick={removeOne}>-</button>
                 <p>{count}</p>
