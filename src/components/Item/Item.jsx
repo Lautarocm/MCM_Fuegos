@@ -1,10 +1,7 @@
 import "./Item.scss"
-import ItemCount from "../ItemCount/ItemCount"
-
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 
 const Item = ({itemData}) => {
-
-    console.log(itemData.pictureUrl)
 
     return (
         <div className="item">
@@ -12,11 +9,10 @@ const Item = ({itemData}) => {
             <div>
                 <div className="productInfo">
                     <p className="title">{itemData.title}</p>
-                    <div className="containerPrice">
-                        <p className="description">{itemData.description}</p>
+                    <div className="details">
                         <p className="price">${itemData.price}</p>
+                        <ItemDetailContainer item={itemData} />
                     </div>
-                    <ItemCount stock={itemData.stock} />
                 </div>
             </div>
         </div>

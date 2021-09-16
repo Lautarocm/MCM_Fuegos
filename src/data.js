@@ -18,7 +18,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 1,
+        id: 2,
         title: "Tabla 3",
         description: "tabla de picar",
         price: 13000,
@@ -26,7 +26,7 @@ export const data = [
         stock: 3
     },
     {
-        id: 1,
+        id: 3,
         title: "Tabla 4",
         description: "tabla de picar",
         price: 13000,
@@ -34,7 +34,7 @@ export const data = [
         stock: 10
     },
     {
-        id: 1,
+        id: 4,
         title: "Tabla 5",
         description: "tabla de picar",
         price: 13000,
@@ -42,7 +42,7 @@ export const data = [
         stock: 8
     },
     {
-        id: 1,
+        id: 5,
         title: "Tabla 6",
         description: "tabla de picar",
         price: 13000,
@@ -50,7 +50,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 1,
+        id: 6,
         title: "Tabla 7",
         description: "tabla de picar",
         price: 13000,
@@ -58,7 +58,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 1,
+        id: 7,
         title: "Tabla 8",
         description: "tabla de picar",
         price: 13000,
@@ -66,7 +66,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 1,
+        id: 8,
         title: "Tabla 9",
         description: "tabla de picar",
         price: 13000,
@@ -74,7 +74,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 1,
+        id: 9,
         title: "Tabla 10",
         description: "tabla de picar",
         price: 13000,
@@ -82,7 +82,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 1,
+        id: 10,
         title: "Tabla 11",
         description: "tabla de picar",
         price: 13000,
@@ -90,7 +90,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 1,
+        id: 11,
         title: "Tabla 12",
         description: "tabla de picar",
         price: 13000,
@@ -98,7 +98,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 1,
+        id: 12,
         title: "Tabla 13",
         description: "tabla de picar",
         price: 13000,
@@ -106,7 +106,7 @@ export const data = [
         stock: 4
     },
     {
-        id: 2,
+        id: 13,
         title: "Tabla 14",
         description: "tabla de picar",
         price: 8500,

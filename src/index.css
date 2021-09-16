@@ -6,6 +6,9 @@
   padding: 0;
 }
 
+.index{
+  position: absolute;
+}
 button{
   cursor: pointer;
 }
