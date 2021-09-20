@@ -1,5 +1,7 @@
-import photo from "./assets/images/tabla.jpg"
-import photo2 from "./assets/images/brasero.jpg"
+import tabla1 from "./assets/images/tabla1.jpg"
+import tabla2 from "./assets/images/tabla2.jpg"
+import tabla3 from "./assets/images/tabla3.jpg"
+import brasero1 from "./assets/images/brasero.jpg"
 
 export const data = [
     {
@@ -9,7 +11,7 @@ export const data = [
         shortDescription: "tabla de asado",
         longDescription: "tabla de asado hecha en maderas de guayubira y guatambú. Las dimensiones son 40x50x4 cm. Tiene manijas y canaleta para jugos",
         price: 6000,
-        pictureUrl: photo,
+        pictureUrl: tabla1,
         stock: 1
     },
     {
@@ -19,7 +21,7 @@ export const data = [
         shortDescription: "tabla de asado",
         longDescription: "tabla de asado hecha en maderas de guayubira y guatambú. Las dimensiones son 40x50x4 cm. Tiene manijas y canaleta para jugos",
         price: 13000,
-        pictureUrl: photo,
+        pictureUrl: tabla2,
         stock: 4
     },
     {
@@ -29,7 +31,7 @@ export const data = [
         shortDescription: "tabla de asado",
         longDescription: "tabla de asado hecha en maderas de guayubira y guatambú. Las dimensiones son 40x50x4 cm. Tiene manijas y canaleta para jugos",
         price: 13000,
-        pictureUrl: photo,
+        pictureUrl: tabla3,
         stock: 3
     },
     {
@@ -39,7 +41,7 @@ export const data = [
         shortDescription: "tabla de asado",
         longDescription: "tabla de asado hecha en maderas de guayubira y guatambú. Las dimensiones son 40x50x4 cm. Tiene manijas y canaleta para jugos",
         price: 13000,
-        pictureUrl: photo,
+        pictureUrl: tabla1,
         stock: 10
     },
     {
@@ -49,7 +51,7 @@ export const data = [
         shortDescription: "tabla de asado",
         longDescription: "tabla de asado hecha en maderas de guayubira y guatambú. Las dimensiones son 40x50x4 cm. Tiene manijas y canaleta para jugos",
         price: 13000,
-        pictureUrl: photo,
+        pictureUrl: tabla2,
         stock: 8
     },
     {
@@ -59,7 +61,7 @@ export const data = [
         shortDescription: "tabla de asado",
         longDescription: "tabla de asado hecha en maderas de guayubira y guatambú. Las dimensiones son 40x50x4 cm. Tiene manijas y canaleta para jugos",
         price: 13000,
-        pictureUrl: photo,
+        pictureUrl: tabla3,
         stock: 4
     },
     {
@@ -69,7 +71,7 @@ export const data = [
         shortDescription: "tabla de asado",
         longDescription: "tabla de asado hecha en maderas de guayubira y guatambú. Las dimensiones son 40x50x4 cm. Tiene manijas y canaleta para jugos",
         price: 13000,
-        pictureUrl: photo,
+        pictureUrl: tabla1,
         stock: 4
     },
     {
@@ -79,7 +81,7 @@ export const data = [
         shortDescription: "brasero encastrable",
         longDescription: "brasero hecho en chapa de 3,2mm desmontable, con parrilla incluida. Las dimensiones son 60x60x40cm",
         price: 13000,
-        pictureUrl: photo2,
+        pictureUrl: brasero1,
         stock: 4
     },
     {
@@ -89,7 +91,7 @@ export const data = [
         shortDescription: "brasero encastrable",
         longDescription: "brasero hecho en chapa de 3,2mm desmontable, con parrilla incluida. Las dimensiones son 60x60x40cm",
         price: 13000,
-        pictureUrl: photo2,
+        pictureUrl: brasero1,
         stock: 4
     },
     {
@@ -99,7 +101,7 @@ export const data = [
         shortDescription: "brasero encastrable",
         longDescription: "brasero hecho en chapa de 3,2mm desmontable, con parrilla incluida. Las dimensiones son 60x60x40cm",
         price: 13000,
-        pictureUrl: photo2,
+        pictureUrl: brasero1,
         stock: 4
     },
     {
@@ -109,7 +111,7 @@ export const data = [
         shortDescription: "brasero encastrable",
         longDescription: "brasero hecho en chapa de 3,2mm desmontable, con parrilla incluida. Las dimensiones son 60x60x40cm",
         price: 13000,
-        pictureUrl: photo2,
+        pictureUrl: brasero1,
         stock: 4
     },
     {
@@ -119,7 +121,7 @@ export const data = [
         shortDescription: "brasero encastrable",
         longDescription: "brasero hecho en chapa de 3,2mm desmontable, con parrilla incluida. Las dimensiones son 60x60x40cm",
         price: 13000,
-        pictureUrl: photo2,
+        pictureUrl: brasero1,
         stock: 4
     },
     {
@@ -129,7 +131,7 @@ export const data = [
         shortDescription: "brasero encastrable",
         longDescription: "brasero hecho en chapa de 3,2mm desmontable, con parrilla incluida. Las dimensiones son 60x60x40cm",
         price: 13000,
-        pictureUrl: photo2,
+        pictureUrl: brasero1,
         stock: 4
     },
     {
@@ -139,7 +141,7 @@ export const data = [
         shortDescription: "brasero encastrable",
         longDescription: "brasero hecho en chapa de 3,2mm desmontable, con parrilla incluida. Las dimensiones son 60x60x40cm",
         price: 8500,
-        pictureUrl: photo2,
+        pictureUrl: brasero1,
         stock: 4
     }
 ]
