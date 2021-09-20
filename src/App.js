@@ -9,8 +9,9 @@ import Contact from "./views/Contact/Contact.jsx"
 import Cart from "./views/Cart/Cart.jsx"
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
-import ItemListContainer from './views/ItemListContainer/ItemListContainter';
-import ItemDetailContainer from "./views/ItemDetailContainer/ItemDetailContainer";
+import ItemListContainer from './components/ItemListContainer/ItemListContainter';
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+
 
 
 function App() {
