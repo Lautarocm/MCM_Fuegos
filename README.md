@@ -3,7 +3,9 @@ El proyecto es el e-commerce de un emprendimiento que tengo con mi hermano de ar
 
 Incluí las dependencias de Font Awesome para usar iconos y la de SASS para estilar los componentes.
 
-Utilizo un archivo data.js como base de datos, con un array de objetos para los productos
+Utilizo un archivo data.js como base de datos, con un array de objetos para los productos.
+
+Las categorías en el navbar se generan dinamicamente. Al agregarse un objeto que tenga una categoría nueva en el data.js, se genera automaticamente dicha categoría en el navbar, sirviendo como un filtro.
 
 
 # Getting Started with Create React App
