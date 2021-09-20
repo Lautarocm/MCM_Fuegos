@@ -1,6 +1,7 @@
 import "./Item.scss"
 
-const firstCapital = str => str.charAt(0).toUpperCase() + str.slice(1)
+const firstCapital = str => 
+    str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
 
 
 const Item = ({itemData}) => {

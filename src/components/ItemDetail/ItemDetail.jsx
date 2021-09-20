@@ -2,7 +2,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import Spinner from "../Spinner/Spinner";
 import "./ItemDetail.scss"
 
-const firstCapital = str => str.charAt(0).toUpperCase() + str.slice(1)
+const firstCapital = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
 
 const ItemDetail = ({item}) => {
 
