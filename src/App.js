@@ -1,24 +1,21 @@
-import {Fragment, useState, useEffect} from "react"
+import { useState, useEffect} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import { getList } from './getList.jsx';
+import Contact from "./views/Contact/Contact.jsx"
+import Cart from "./views/Cart/Cart.jsx"
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
-import ItemListContainer from './components/ItemListContainer/ItemListContainter.jsx';
-import { data } from './data';
+import ItemListContainer from './views/ItemListContainer/ItemListContainter';
+import ItemDetailContainer from "./views/ItemDetailContainer/ItemDetailContainer";
 
 
 function App() {
 
-  function getList(){
-    
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve (data)
-          setLoading(false)
-        }, 2000)
-    })
-  }
-
   const [itemList, setItemList] = useState([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
         
@@ -31,10 +28,26 @@ function App() {
   }, [])
 
   return (
-    <Fragment>
-      <NavBar />
-      <ItemListContainer itemList={itemList} loading={loading} />
-    </Fragment>
+    <Router>
+      <NavBar itemList={itemList} />
+      <Switch>
+        <Route exact path="/">
+          <ItemListContainer />
+        </Route>
+        <Route path="/category/:category">
+          <ItemListContainer />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="/item/:id">
+          <ItemDetailContainer />
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 

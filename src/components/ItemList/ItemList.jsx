@@ -1,14 +1,22 @@
+import { Link } from "react-router-dom"
 import Item from "../Item/Item";
+import Spinner from "../Spinner/Spinner";
 import "./ItemList.scss"
 
 
-const ItemList = ({items}) => {
+const ItemList = ({products}) => {
+
+    if(!products){
+        return <Spinner />
+    }
 
     return (
         <div className="itemList">
             {
-                items.map(item => (
-                    <Item key={item.id} itemData={item} />
+                products.map(product => (
+                    <Link key={product.id} to={`/item/${product.id}`}>
+                        <Item itemData={product} />
+                    </Link>
                 ))
             }
         </div>

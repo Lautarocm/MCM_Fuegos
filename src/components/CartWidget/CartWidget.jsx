@@ -7,7 +7,7 @@ const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />
 
 const CartWidget = () => {
     return (
-        <button className="navbar__cartIcon">{cartIcon}</button>
+        <button className="navbar__item navbar__cartIcon">{cartIcon}</button>
     );
 }
  

@@ -1,19 +1,7 @@
 .navbar__item{
-    margin-inline: 20px;
     border: none;
     background-color: transparent;
     color: white;
-    font-size: 1.1rem;
-    &::after{
-        content: "";
-        display: block;
-        width: 0%;
-        border: solid 1px white;
-        opacity: 0;
-    }
-    &:hover::after{
-        opacity: 1;
-        width: 100%;
-        transition: all 500ms;
-    }
+    font-size: 1.5rem;
+    padding: 5px 10px;
 }

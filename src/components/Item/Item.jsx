@@ -1,5 +1,7 @@
 import "./Item.scss"
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+
+const firstCapital = str => str.charAt(0).toUpperCase() + str.slice(1)
+
 
 const Item = ({itemData}) => {
 
@@ -8,10 +10,10 @@ const Item = ({itemData}) => {
             <img alt="#" src={itemData.pictureUrl}></img>
             <div>
                 <div className="productInfo">
-                    <p className="title">{itemData.title}</p>
+                    <p className="title">{firstCapital(itemData.title)}</p>
                     <div className="details">
+                        <p className="description">{firstCapital(itemData.shortDescription)}</p>
                         <p className="price">${itemData.price}</p>
-                        <ItemDetailContainer item={itemData} />
                     </div>
                 </div>
             </div>

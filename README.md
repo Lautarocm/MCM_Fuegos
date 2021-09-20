@@ -1,3 +1,11 @@
+
+El proyecto es el e-commerce de un emprendimiento que tengo con mi hermano de artículos para el asador.
+
+Incluí las dependencias de Font Awesome para usar iconos y la de SASS para estilar los componentes.
+
+Utilizo un archivo data.js como base de datos, con un array de objetos para los productos
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
