@@ -13,6 +13,7 @@ const ItemDetail = ({item}) => {
         setQuantity(productsQuantity)
     }
 
+    //useEffect para testear que se setee bien el quantity
     useEffect(() => {
         console.log(quantity)
         return () => {console.log(`dismounting ${quantity}`)}
