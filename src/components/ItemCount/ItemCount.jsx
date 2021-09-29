@@ -1,18 +1,19 @@
-import { Fragment } from 'react';
+import { useState, Fragment, useContext } from "react"
 import { Link } from "react-router-dom"
-import { useState } from "react"
 import "./ItemCount.scss"
+import CartContext from '../../context/CartContext';
 
 
 
-const ItemCount = ({stock, onConfirm}) => {
+const ItemCount = ({item}) => {
     
+    const { addItem } = useContext(CartContext)
     const [clicked, setClicked] = useState(false)
     const minimum = 0
-    const addOne = () => {count < stock && setCount(count +1)}
+    const addOne = () => {count < item.stock && setCount(count +1)}
     const removeOne = () => {count > minimum && setCount(count -1)}
-    
     const [count, setCount] = useState(0)
+
 
     return (
         <div className="itemCount">
@@ -30,14 +31,14 @@ const ItemCount = ({stock, onConfirm}) => {
                     <div className="itemCount__buttons">
                         <button disabled={count === minimum} onClick={removeOne}>-</button>
                         <p>{count}</p>
-                        <button disabled={count === stock} onClick={addOne}>+</button>
+                        <button disabled={count === item.stock} onClick={addOne}>+</button>
                     </div>
                     {(count <= minimum ? 
                         <p>Cuantas unidades quieres?</p> : 
-                        <button onClick={() => {onConfirm(count); setClicked(true)}} className="addToCart-btn">Agregar al carrito</button>)}
+                        <button onClick={() => {addItem(item, count); setClicked(true)}} className="addToCart-btn">Agregar al carrito</button>)}
                 </Fragment>
             }
-            <p className="stock">Stock: {stock}</p>
+            <p className="stock">Stock: {item.stock}</p>
         </div>
     );
 }

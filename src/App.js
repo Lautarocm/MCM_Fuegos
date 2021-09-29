@@ -11,6 +11,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainter';
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import {CartContextProvider} from "./context/CartContext"
 
 
 
@@ -29,26 +30,28 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <NavBar itemList={itemList} />
-      <Switch>
-        <Route exact path="/">
-          <ItemListContainer />
-        </Route>
-        <Route path="/category/:category">
-          <ItemListContainer />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="/item/:id">
-          <ItemDetailContainer />
-        </Route>
-      </Switch>
-    </Router>
+    <CartContextProvider>
+      <Router>
+        <NavBar itemList={itemList} />
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer />
+          </Route>
+          <Route path="/category/:category">
+            <ItemListContainer />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+          <Route path="/item/:id">
+            <ItemDetailContainer />
+          </Route>
+        </Switch>
+      </Router>
+    </CartContextProvider>
   )
 }
 

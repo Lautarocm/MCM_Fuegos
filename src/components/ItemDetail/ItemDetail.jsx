@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import Spinner from "../Spinner/Spinner";
 import "./ItemDetail.scss"
@@ -6,18 +5,6 @@ import "./ItemDetail.scss"
 const firstCapital = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
 
 const ItemDetail = ({item}) => {
-
-    const [quantity, setQuantity] = useState(0)
-
-    const addToCart = (productsQuantity) => {
-        setQuantity(productsQuantity)
-    }
-
-    //useEffect para testear que se setee bien el quantity
-    useEffect(() => {
-        console.log(quantity)
-        return () => {console.log(`dismounting ${quantity}`)}
-    }, [quantity])
 
     if(!item){
         return <Spinner />
@@ -36,7 +23,7 @@ const ItemDetail = ({item}) => {
                 </div>
             </main>
             <footer>
-                <ItemCount className="counter" onConfirm={addToCart} stock={item.stock} />
+                <ItemCount className="counter" item={item} />
             </footer>
         </div>
     );
