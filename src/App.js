@@ -5,8 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import { getList } from './getList.jsx';
-import Contact from "./views/Contact/Contact.jsx"
-import Cart from "./views/Cart/Cart.jsx"
+import Contact from "./components/Contact/Contact.jsx"
+import Cart from "./components/Cart/Cart.jsx"
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainter';
