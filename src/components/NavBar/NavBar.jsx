@@ -29,7 +29,7 @@ const NavBar = ({itemList}) => {
                     <NavBarItem label="contacto" />  
                 </NavLink>
                 
-                <NavLink activeClassName="navLinkActive" className="navLink" to="/cart">
+                <NavLink to="/cart">
                     <CartWidget />
                 </NavLink>
             </ul>

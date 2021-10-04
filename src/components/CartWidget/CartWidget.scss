@@ -1,11 +1,27 @@
-.navbar__cartIcon{
-    background-color: transparent;
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    margin-inline: 10px;
-    &:hover{
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover .navbar__cartIcon{
         color: rgb(113, 172, 113);
         transition: all 300ms;
     }
+    &:hover .cartQuantity{
+        color: white;
+        transition: all 300ms;
+    }
+    .navbar__cartIcon{
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 2rem;
+    }
+    .cartQuantity{
+        color: black;
+        font-weight: bold;
+        position: absolute;
+        margin-bottom: 9px;
+        margin-left: 6px;
+    }
 }
+
