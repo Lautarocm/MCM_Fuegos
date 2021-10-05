@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import "./Cart.scss"
 import CartContext from '../../context/CartContext';
+import Button from "../Button/Button"
 
 const Cart = () => {
 
-    const { addedProducts, removeItem, clear } = useContext(CartContext)
+    const { addedProducts, removeItem, clear, price } = useContext(CartContext)
 
     return (
         <div className="cart">
@@ -19,7 +20,8 @@ const Cart = () => {
                     <button onClick={() => removeItem(prod.id)} className="removeBtn">x</button>
                 </div>
             )}
-            {addedProducts.length > 0 ? <button onClick={() => clear()}>Vaciar carrito</button> : <p>Su carrito está vacío</p>}
+            {addedProducts.length > 0 ? <><Button label="Vaciar carrito" clickHandler={() => clear()} /> <p className="totalPrice">TOTAL: {price}</p></> : <p>Su carrito está vacío</p>}
+            
         </div>
     );
 }

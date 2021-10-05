@@ -1,53 +1,42 @@
-import { useState, Fragment, useContext } from "react"
-import { Link } from "react-router-dom"
+import { Fragment, useState, useContext } from "react"
 import "./ItemCount.scss"
 import CartContext from '../../context/CartContext';
+import Button from "../Button/Button"
 
 
 
-const ItemCount = ({item}) => {
+const ItemCount = ({item, itemAdded}) => {
+
     
-    const [count, setCount] = useState(0)
-    const [clicked, setClicked] = useState(false)
+    const [counter, setCounter] = useState(0)
     const { addItem } = useContext(CartContext)
-    const addOne = () => {count < item.stock && setCount(count +1)}
-    const removeOne = () => {count > 0 && setCount(count -1)}
+    const addOne = () => {counter < item.stock && setCounter(counter +1)}
+    const removeOne = () => {counter > 0 && setCounter(counter -1)}
 
+    const onClickHandler = (item, counter) => {
+        addItem(item, counter)
+        itemAdded(true)
+    }
 
     return (
         <div className="itemCount">
-            
-            {clicked ? 
-                
             <Fragment>
                 <div className="itemCount__buttons">
-                    <button disabled>-</button>
-                    <p>{count}</p>
-                    <button disabled>+</button>
-                </div>
-                <Link to="/cart"><button className="addToCart-btn">Finalizar compra</button></Link>
-            </Fragment>
-            
-            :
-            
-            <Fragment>
-                <div className="itemCount__buttons">
-                    <button disabled={count === 0} onClick={removeOne}>-</button>
-                    <p>{count}</p>
-                    <button disabled={count === item.stock} onClick={addOne}>+</button>
+                    <button disabled={counter === 0} onClick={removeOne}>-</button>
+                    <p>{counter}</p>
+                    <button disabled={counter === item.stock} onClick={addOne}>+</button>
                 </div>
                 
-                {(count <= 0 ?
+                {(counter <= 0 ?
 
                 <p>Cuantas unidades quieres?</p>
                 
                 :
                 
-                <button onClick={() => {addItem(item, count); setClicked(true)}} className="addToCart-btn">Agregar al carrito</button>)}
-                    
+                <Button label="Agregar al carrito" clickHandler={() => onClickHandler(item, counter)} />
+                )}
             </Fragment>
 
-            }
             <p className="stock">Stock: {item.stock}</p>
         </div>
     );

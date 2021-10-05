@@ -1,10 +1,15 @@
+import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import Spinner from "../Spinner/Spinner";
 import "./ItemDetail.scss"
+import { Link } from "react-router-dom";
+import Button from "../Button/Button"
 
 const firstCapital = str => str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
 
 const ItemDetail = ({item}) => {
+
+    const [itemAdded, setItemAdded] = useState(false)
 
     if(!item){
         return <Spinner />
@@ -23,7 +28,7 @@ const ItemDetail = ({item}) => {
                 </div>
             </main>
             <footer>
-                <ItemCount className="counter" item={item} />
+               {!itemAdded ? <ItemCount className="counter" item={item} itemAdded={setItemAdded} /> : <Link to="/cart"><Button label="Finalizar compra" /></Link>}
             </footer>
         </div>
     );

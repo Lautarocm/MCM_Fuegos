@@ -5,6 +5,6 @@ export const getList = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve (data)
-        }, 0)
+        }, 2000)
     })
 }
