@@ -25,13 +25,11 @@ export const CartContextProvider = ({children}) => {
     const addItem = (item, quantity) => {
 
         if(!isInCart(item.id)){
-            console.log("agregando al carrito")
             const newProduct = {...item, quantity: quantity}
             const products = [...addedProducts, newProduct]
             setAddedProducts(products)
         }
         else{
-            console.log("actualizando carrito")
             updateProductInCart(item.id, quantity)
         }
     }

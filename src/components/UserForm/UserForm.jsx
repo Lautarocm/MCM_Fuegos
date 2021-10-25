@@ -12,8 +12,7 @@ const UserForm = ({showForm, submitForm, confirmOrder}) => {
         const buyer = {
             name: e.target.children.name.value,
             phone: e.target.children.phone.value,
-            email: e.target.children.email.value,
-            confirmEmail: e.target.children.confirmEmail.value
+            email: e.target.children.email.value
         }
         showForm(showFormState)
         confirmOrder(buyer)
@@ -28,8 +27,6 @@ const UserForm = ({showForm, submitForm, confirmOrder}) => {
                 <input type="number" id="phone" name="phone" required />
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" name="email" required />
-                <label htmlFor="confirmEmail">Confirmar email</label>
-                <input type="confirmEmail" id="confirmEmail" name="confirmEmail" required />
                 <Button label="Finalizar compra"/>
                 <button className="closeForm" onClick={() => onClickhandler(false)}>X</button>
             </form>

@@ -11,6 +11,8 @@ const Cart = () => {
     const { addedProducts, removeItem, clear, total } = useContext(CartContext)
     const [processingOrder, setProcessingOrder] = useState(false)
     const [showForm, setShowForm] = useState(false)
+    const [generatedOrder, setGeneratedOrder] = useState()
+    const [orderId, setOrderId] = useState()
 
     const confirmOrder = (buyer) => {
         
@@ -40,8 +42,10 @@ const Cart = () => {
         })
 
         if(outOfStock.length === 0){
-            addDoc(collection(db, "orders"), order).then(() => {
+            addDoc(collection(db, "orders"), order).then((ref) => {
                 batch.commit()
+                setOrderId(ref._key.path.segments[1])
+                setGeneratedOrder(true)
             })
             .catch(error => console.log(error))
             .finally(() => {
@@ -56,6 +60,10 @@ const Cart = () => {
             <h1>Carrito</h1>
 
             {!processingOrder ?
+            addedProducts.length === 0 ?
+            generatedOrder ? 
+            <p>{`Orden generada, el id de su compra es el #${orderId}`}</p>:
+            <p>su carrito está vacío</p> :
             <>
                 {addedProducts.map(prod =>
                     <div key={prod.id} className="cartItem">
@@ -69,15 +77,16 @@ const Cart = () => {
                     </div>
                 )}
                 {addedProducts.length > 0 ? 
-            <>
-                <Button label="Vaciar carrito" clickHandler={() => clear()} />
-                <Button label="Confirmar compra" clickHandler={() => setShowForm(true)} />
-                <p className="totalPrice">TOTAL: {total}</p>
-                {showForm && <UserForm showForm={setShowForm} confirmOrder={confirmOrder} />}
-            </> : 
-            <p>Su carrito está vacío</p>}
+                <>
+                    <Button label="Vaciar carrito" clickHandler={() => clear()} />
+                    <Button label="Confirmar compra" clickHandler={() => setShowForm(true)} />
+                    <p className="totalPrice">TOTAL: {total}</p>
+                    {showForm && <UserForm showForm={setShowForm} confirmOrder={confirmOrder} />}
+                </> : 
+                generatedOrder && <p>{`Orden generada, el id de su compra es el #${orderId}`}</p>
+                }
             </> :
-            "Procesando orden"
+            <p>Procesando orden</p>
             }
 
             

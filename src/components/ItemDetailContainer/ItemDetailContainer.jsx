@@ -17,9 +17,7 @@ const ItemDetailContainer = () => {
         getDoc(doc(db, "products", id)).then(querySnapshot => {
             const item = {id: id, ...querySnapshot.data()}
             setProduct(item)
-        }).catch((error) => {
-            console.log("error searching item: ", error)
-        })
+        }).catch(error => console.log("error searching item: ", error))
         .finally(setLoading(false))
     }, [id])
 

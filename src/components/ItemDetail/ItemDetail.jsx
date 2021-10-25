@@ -16,6 +16,7 @@ const ItemDetail = ({product}) => {
     }
 
     return (
+        product.title ? //si no existe product.title es porque el producto no existe
         <div className="itemDetail">
             <header>
                 <h2 className="title">{firstCapital(product.title)}</h2>
@@ -30,7 +31,8 @@ const ItemDetail = ({product}) => {
             <footer>
                {!itemAdded ? <ItemCount className="counter" product={product} itemAdded={setItemAdded} /> : <Link to="/cart"><Button label="Ir al Carrito" /></Link>}
             </footer>
-        </div>
+        </div> :
+        "El producto no existe"
     );
 }
  
