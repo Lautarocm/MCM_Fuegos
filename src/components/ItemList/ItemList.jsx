@@ -6,11 +6,9 @@ import "./ItemList.scss"
 
 const ItemList = ({products}) => {
 
-    if(!products){
-        return <Spinner />
-    }
-
     return (
+        !products ?
+        <Spinner /> :
         <div className="itemList">
             {
                 products.map(product => (
@@ -20,6 +18,7 @@ const ItemList = ({products}) => {
                 ))
             }
         </div>
+
     );
 }
  

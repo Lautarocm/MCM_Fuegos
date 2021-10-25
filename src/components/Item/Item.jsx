@@ -13,7 +13,7 @@ const Item = ({itemData}) => {
                 <div className="productInfo">
                     <p className="title">{firstCapital(itemData.title)}</p>
                     <div className="details">
-                        <p className="description">{firstCapital(itemData.shortDescription)}</p>
+                        <p className="description">{firstCapital(itemData.shortDesc)}</p>
                         <p className="price">${itemData.price}</p>
                     </div>
                 </div>

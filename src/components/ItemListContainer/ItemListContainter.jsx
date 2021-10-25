@@ -1,38 +1,40 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "../../components/ItemList/ItemList"
-import { getList } from "../../getList"
 import "./ItemListContainer.scss"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../../services/firebase/Firebase"
+import Spinner from "../Spinner/Spinner"
 
 const ItemListContainer = () => {
 
     const {category} = useParams()
     const [products, setProducts] = useState(undefined)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         
-        const list = getList()
-
-        if(category){
-            list.then(result => {
-                const filteredProducts = result.filter(product => product.category === category)
-                setProducts(filteredProducts)
-            }, err => console.log(err))
-            .catch((reason) => console.log(reason))
+        if(!category){
+            getDocs(collection(db, "products")).then(querySnapshot => {
+                const items = querySnapshot.docs.map(doc => {return {id: doc.id, ...doc.data()}})
+                setProducts(items)
+            }).catch((error) => console.log("error searching items: ", error))
+            .finally(setLoading(false))
         }
         else{
-            list.then(result => setProducts(result))
+            getDocs(query(collection(db, "products"), where("category", "==", category))).then(querySnapshot => {
+                const items = querySnapshot.docs.map(doc => {return {id: doc.id, ...doc.data()}})
+                setProducts(items)
+            }).catch((error) => console.log("error searching items: ", error))
+            .finally(setLoading(false))
         }
-        return () => {
-            setProducts(undefined)
-        }
+        
     }, [category])
-    
 
     return (
         <div className="itemListContainer">
             <h1>Productos</h1>
-            <ItemList products={products} />
+            {loading ? <Spinner /> : <ItemList products={products} />}
         </div>
     )
 }

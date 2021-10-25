@@ -5,12 +5,12 @@ import Button from "../Button/Button"
 
 
 
-const ItemCount = ({item, itemAdded}) => {
+const ItemCount = ({product, itemAdded}) => {
 
     
     const [counter, setCounter] = useState(0)
     const { addItem } = useContext(CartContext)
-    const addOne = () => {counter < item.stock && setCounter(counter +1)}
+    const addOne = () => {counter < product.stock && setCounter(counter +1)}
     const removeOne = () => {counter > 0 && setCounter(counter -1)}
 
     const onClickHandler = (item, counter) => {
@@ -24,7 +24,7 @@ const ItemCount = ({item, itemAdded}) => {
                 <div className="itemCount__buttons">
                     <button disabled={counter === 0} onClick={removeOne}>-</button>
                     <p>{counter}</p>
-                    <button disabled={counter === item.stock} onClick={addOne}>+</button>
+                    <button disabled={counter === product.stock} onClick={addOne}>+</button>
                 </div>
                 
                 {(counter <= 0 ?
@@ -33,11 +33,11 @@ const ItemCount = ({item, itemAdded}) => {
                 
                 :
                 
-                <Button label="Agregar al carrito" clickHandler={() => onClickHandler(item, counter)} />
+                <Button label="Agregar al carrito" clickHandler={() => onClickHandler(product, counter)} />
                 )}
             </Fragment>
 
-            <p className="stock">Stock: {item.stock}</p>
+            <p className="stock">Stock: {product.stock}</p>
         </div>
     );
 }
